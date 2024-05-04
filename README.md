@@ -3,6 +3,7 @@
 # How to run multiple java files from the commandline
 
 1. **Compile Java Files:**
+   - `cd c:\binToDec` : this is the root of the java project and all file references are relative to this directory.
    - `javac`: This is the Java compiler command. It is used to compile Java source files into bytecode (.class files).
    - `-d output\classes`: This option specifies the destination directory for compiled class files. In this case, it's `output\classes`.
    - `src\BinToDecApp.java src\BinToDec.java`: These are the Java source files to be compiled. They are specified after the `javac` command.

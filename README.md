@@ -3,12 +3,15 @@
 # How to run multiple java files from the commandline
 
 1. **Compile Java Files:**
+   ```
+   javac -d output\classes src\*.java
+   ```
    - `cd c:\binToDec` : this is the root of the java project and all file references are relative to this directory.
    - `javac`: This is the Java compiler command. It is used to compile Java source files into bytecode (.class files).
    - `-d output\classes`: This option specifies the destination directory for compiled class files. In this case, it's `output\classes`.
-   - `src\BinToDecApp.java src\BinToDec.java`: These are the Java source files to be compiled. They are specified after the `javac` command.
+   - src\*.java specifies all java files under the src directory that are `src\BinToDecApp.java and src\BinToDec.java`: These are the Java source files to be compiled.
 
-   Putting it all together, the command `javac -d output\classes src\BinToDecApp.java src\BinToDec.java` tells the Java compiler to compile `BinToDecApp.java` and `BinToDec.java` files and put the compiled `.class` files into the `output\classes` directory.
+   Putting it all together, the command `javac -d output\classes src\*.java` tells the Java compiler to compile `BinToDecApp.java` and `BinToDec.java` files and put the compiled `.class` files into the `output\classes` directory.
 
 2. **Create JAR File:**
    - `jar`: This command is used to create a Java Archive (JAR) file, which is a compressed file format that bundles Java class files, resources, and metadata.
@@ -22,6 +25,11 @@
    So, the command `jar cvf output\BinToDec.jar -C output\classes .` creates a JAR file named `BinToDec.jar`, including all compiled `.class` files from the `output\classes` directory.
 
 3. **Run Project:**
+   ```
+   c:\binToDec
+   
+   java -cp output\classes BinToDecApp
+   ```
    - `java`: This command is used to execute Java programs.
    - `-cp output\classes`: This option specifies the classpath, i.e., the directories or JAR files containing the compiled classes.
    - `BinToDecApp`: This is the name of the main class to run.

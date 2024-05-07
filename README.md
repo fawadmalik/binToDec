@@ -14,6 +14,10 @@
    Putting it all together, the command `javac -d output\classes src\*.java` tells the Java compiler to compile `BinToDecApp.java` and `BinToDec.java` files and put the compiled `.class` files into the `output\classes` directory.
 
 2. **Create JAR File:**
+   Still in the `c:\binToDec` directory, create a JAR file using the compiled classes:
+   ```
+   jar cvf output\BinToDec.jar -C output\classes .
+   ```
    - `jar`: This command is used to create a Java Archive (JAR) file, which is a compressed file format that bundles Java class files, resources, and metadata.
    - `cvf`: These are options for the `jar` command:
      - `c`: Create a new JAR file.

@@ -1,0 +1,33 @@
+public class DecToBin {
+    public String getBin(int dec) {
+        List<Integer> rems = new ArrayList();
+
+        int exp = dec;
+        while (exp >= 2) {
+            exp = processNum(rems, exp);
+        }
+        rems.add(1);
+        return toBin(rems);
+    }
+
+    private static int processNum(List<Integer> rems, int exp){
+        int currNum = exp;
+        int rem = currNum % 2;
+        rems.add(rem);
+        if(rem == 1){
+            exp = (currNum - 1) / 2;
+        }else {
+            exp = currNum / 2;
+        }
+        System.out.println(exp + ":1:" + rem);
+        return exp;
+    }
+
+    private static String toBin(List<Integer> rems){
+        String bin = "";
+        for(int rem : rems){
+            bin = String.valueOf(rem) + bin;
+        }
+        return bin;
+    }
+}
